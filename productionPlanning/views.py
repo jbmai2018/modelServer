@@ -1,6 +1,3 @@
-from django.shortcuts import render
-import cv2
-# Create your views here.
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.http import JsonResponse
@@ -13,33 +10,31 @@ from rest_framework.authtoken.models import Token
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.permissions import IsAuthenticated
 from rest_framework import status
-import Maskrcnn.maskrcnn as mask
-# from auto.frameAcq import *
+import productionPlanning.analysis as analysis
+
+# from captureImage.frameAcq import *
 
 class predict(generics.RetrieveUpdateDestroyAPIView):
     # authentication_classes = (TokenAuthentication,)
     # permission_classes = (IsAuthenticated,)
-    def post(self, request):
-        requestData = request.data['path']
-        '''
-        print("bodyyy",requestData)
-        dataToSend = "hello returned"
-        path = '"'  + requestData+ '"'
-        print(path)
-        img = cv2.imread(requestData)
-        answer = mayank.input(img)
-        print("Output -----"+str(answer))
-        # image = request.FILES['image']
-        # print(image)
-        # cv2.imshow("nn",img)
-        # cv2.waitKey(0)
-        # dataToSend = "hello returned"
-        # print(dataToSend)
-        '''
-        out = mask.detection(requestData)
+    def get(self, request):
+        # answer = analysis.get_result(requestData)
         dataToSend = {
-            "result" : str(out)
+            "result" : "ass1"
         }
+        return JsonResponse(
+            dataToSend,
+            safe=False,content_type='application/json')
+
+    def post(self, request):
+        crPath = request.data['crPath']
+        emergPath = request.data['emergPath']
+        answer = analysis.get_result(crPath)
+        print(answer)
+        dataToSend = {
+            "result" : answer
+        }
+
         return JsonResponse(
             dataToSend,
             safe=False,content_type='application/json')

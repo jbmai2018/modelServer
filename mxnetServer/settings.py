@@ -25,7 +25,7 @@ SECRET_KEY = '1q%j$+-o&&ae__$htf$%*z40)-fhhpg24x)!wdm(6522p5@=8#'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', '127.0.0.1', '103.94.66.107', '10.0.2.2']
+ALLOWED_HOSTS = ['localhost', '127.0.0.1', '103.94.66.107', '10.0.2.2', '3.7.85.13']
 
 
 # Application definition
@@ -37,11 +37,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'nltkServer',
-    'captureImage',
-    'autoencoder_mayank',
-    'isolationForest',
-    'Maskrcnn'
+    # 'nltkServer',
+    # 'captureImage',
+    # 'autoencoder_mayank',
+    # 'isolationForest',
 ]
 
 MIDDLEWARE = [

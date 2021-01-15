@@ -19,9 +19,10 @@ from django.urls import path
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('model/image/', include('captureImage.urls')),
-    path('model/autoencoder_mayank/', include('autoencoder_mayank.urls')),
-    path('model/isolationForest/', include('isolationForest.urls')),
-    path('model/maskrcnn/', include('Maskrcnn.urls')),
+    path('modelServer/', include('productionPlanning.urls')),
+    # path('model/image/', include('captureImage.urls')),
+    # path('model/autoencoder_mayank/', include('autoencoder_mayank.urls')),
+    # path('model/isolationForest/', include('isolationForest.urls')),
+    # path('model/maskrcnn/', include('Maskrcnn.urls')),
     # path('model/image/', include('captureImage.urls')),
 ]
