@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'productionPlanning',
     # 'nltkServer',
     # 'captureImage',
     # 'autoencoder_mayank',
@@ -91,6 +92,10 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
+
+
+_URL = '/productionPlanning/uploads/'
+MEDIA_ROOT = os.path.join(BASE_DIR,"productionPlanning/uploads/")
 
 
 # Password validation
