@@ -56,7 +56,7 @@ def get_quantity(row):
 def get_plan(n, loading_file, j1_cric_file, j3_cric_file, Initial_time, critical_col=None):
     ## Read operation_SPM_List
     print("Reading Excel files")
-    df_SPM = pd.read_excel('/home/ishant/ML/ProdPlan/Data/I4_part_SPM_operations.xlsx')
+    df_SPM = pd.read_excel(os.path.join(BASE_DIR,'productionPlanning/I4_part_SPM_operations.xlsx'))
     df = pd.read_excel(loading_file, sheet_name=int(n))
     df.rename(columns={'Total': 'Inventory', 'Grand Total': 'Grand req.'}, inplace=True)
 
@@ -65,8 +65,8 @@ def get_plan(n, loading_file, j1_cric_file, j3_cric_file, Initial_time, critical
     df_j3 = pd.read_excel(j3_cric_file, sheet_name=int(n))
 
     ## Reading rm_packaging_file
-    df_rm = pd.read_excel("/home/ishant/ML/ProdPlan/Data/RM PACKAGING _.xlsx", sheet_name=0)
-    df_day_wise = pd.read_excel("/home/ishant/ML/ProdPlan/Data/RM PACKAGING _.xlsx", sheet_name=1)
+    df_rm = pd.read_excel(os.path.join(BASE_DIR,"productionPlanning/RM PACKAGING _.xlsx"), sheet_name=0)
+    df_day_wise = pd.read_excel(os.path.join(BASE_DIR,"productionPlanning/RM PACKAGING _.xlsx"), sheet_name=1)
 
     if critical_col:
         cric_j1 = critical_col
