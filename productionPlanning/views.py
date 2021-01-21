@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate
 from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
 from rest_framework.exceptions import ParseError
 from rest_framework import generics
@@ -19,6 +20,7 @@ import productionPlanning.analysis as analysis
 class predict(generics.RetrieveUpdateDestroyAPIView):
     # authentication_classes = (TokenAuthentication,)
     # permission_classes = (IsAuthenticated,)
+    @csrf_exempt
     def get(self, request):
         answer = analysis.get_result()
         dataToSend = {
@@ -27,7 +29,7 @@ class predict(generics.RetrieveUpdateDestroyAPIView):
         return JsonResponse(
             dataToSend,
             safe=False,content_type='application/json')
-
+    @csrf_exempt
     def post(self, request):
         crPath = request.data['crPath']
         answer = analysis.get_result(crPath)
@@ -44,6 +46,7 @@ class predict(generics.RetrieveUpdateDestroyAPIView):
 class FileView(APIView):
     parser_classes = (MultiPartParser,FormParser)
 
+    @csrf_exempt
     def post(self,request,*args,**kwargs):
         file_serializer = FileSerializer(data=request.data)
         if file_serializer.is_valid():
