@@ -215,4 +215,4 @@ def get_result():
     output_df.rename(columns={'BAL': 'Quantity'}, inplace=True)
     timeList = [output_df['Plan Time'].values.tolist()[-1].split('-')[-1].split(',')[-1].strip(), '00:10:00']
     Initial_time = addtime(timeList).split('day')[-1].strip()
-    return output_df[['Part No.', 'Quantity', 'I-802', 'I-406', 'I-407', 'I-408', 'Plan Time']] .to_json()
+    return output_df[['Part No.', 'Quantity', 'I-802', 'I-406', 'I-407', 'I-408', 'Plan Time']] .to_json(orient='records')
