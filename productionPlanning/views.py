@@ -14,6 +14,7 @@ from rest_framework import status
 from rest_framework.parsers import MultiPartParser, FormParser
 from .serializers import FileSerializer
 import productionPlanning.analysis as analysis
+import productionPlanning.dbserver as db
 
 # from captureImage.frameAcq import *
 
@@ -52,6 +53,7 @@ class FileView(APIView):
         if file_serializer.is_valid():
             file_serializer.save()
             print(file_serializer.data)
+            db.store_in_db(file_serializer.data)
             return Response(file_serializer.data,status=status.HTTP_201_CREATED)
         else:
             return Response(file_serializer.errors,status=status.HTTP_400_BAD_REQUEST)

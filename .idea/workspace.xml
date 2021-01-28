@@ -3,7 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="6d7aaf5e-d361-4ff7-9404-62c8ec1f665f" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite3" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite3" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionPlanning/I4_part_SPM_operations.xlsx" beforeDir="false" afterPath="$PROJECT_DIR$/productionPlanning/I4_part_SPM_operations.xlsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionPlanning/RM PACKAGING _.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/productionPlanning/analysis.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionPlanning/analysis.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/productionPlanning/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/productionPlanning/views.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +43,11 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/productionPlanning" />
+    </key>
+  </component>
   <component name="RunManager">
     <configuration name="modelServer" type="Python.DjangoServer" factoryName="Django server">
       <module name="modelServer" />
@@ -73,7 +82,8 @@
       <option name="presentableId" value="Default" />
       <updated>1611045684947</updated>
       <workItem from="1611045686239" duration="10771000" />
-      <workItem from="1611124174865" duration="161000" />
+      <workItem from="1611124174865" duration="1710000" />
+      <workItem from="1611817507275" duration="5744000" />
     </task>
     <servers />
   </component>
